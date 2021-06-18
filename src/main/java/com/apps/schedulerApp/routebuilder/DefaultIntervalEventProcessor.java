@@ -17,7 +17,6 @@ public class DefaultIntervalEventProcessor implements Processor {
     private SampleService    sampleService;
 
     public void process(Exchange exchange) throws Exception {
-        LOG.info("DefaultIntervalEventProcessor saying hello!!");
-        sampleService.process();
+    	sampleService.process();
     }
 }

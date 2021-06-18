@@ -6,17 +6,8 @@ spring:
 spring:
   profiles: development
 
-  datasource:
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    url: jdbc:sqlserver://localhost;databaseName=appsdev
-    username: appsdev
-    password: appsdev2021
-
 quartz2:
   app-default-scheduler: quartz2://appGroup/sampleTimer?cron=0+0/%s+1-23+?+*+MON-SUN
-  app-maximum-scheduler: quartz2://appGroup/thresholdTimer?cron=0+0/%s+1-23+?+*+MON-SUN
-
-configServiceUrl: http://localhost:8080
 
 thread-pooling:
   core-pool-size: 25
