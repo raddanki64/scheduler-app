@@ -17,8 +17,8 @@ import  org.springframework.http.ResponseEntity;
 import  org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value="", produces = MediaType.APPLICATION_JSON_VALUE)
-@Api(value = "Return poc settings", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value="", produces = MediaType.TEXT_HTML_VALUE)
+@Api(value = "Return poc settings", produces = MediaType.TEXT_HTML_VALUE)
 @AllArgsConstructor
 
 public class AppsController {
@@ -30,7 +30,7 @@ public class AppsController {
     @ApiOperation(value = "Say hello!")
     @ApiResponses(value = {@ApiResponse(code = 200, message = "OK", response = String.class)})
     public ResponseEntity<?> sayHelo() throws Exception {    	
-        String resource = "Hello! Family, Happy Fathers Day!!";
+        String resource = "<html><p>Happy Fathers Day Family!!</p></html>";
         return new ResponseEntity<>(resource, HttpStatus.OK);
     }
 }
