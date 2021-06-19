@@ -30,7 +30,7 @@ public class AppsController {
     @ApiOperation(value = "Say hello!")
     @ApiResponses(value = {@ApiResponse(code = 200, message = "OK", response = String.class)})
     public ResponseEntity<?> sayHelo() throws Exception {    	
-        String resource = "<html><p>Happy Fathers Day Family!!</p></html>";
+        String resource = "<html><b><p>Happy Fathers Day Family!!</p></b></html>";
         return new ResponseEntity<>(resource, HttpStatus.OK);
     }
 }
