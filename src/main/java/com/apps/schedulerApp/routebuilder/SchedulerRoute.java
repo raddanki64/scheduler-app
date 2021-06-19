@@ -5,15 +5,13 @@ import  org.apache.camel.builder.RouteBuilder;
 import  org.slf4j.Logger;
 import  org.slf4j.LoggerFactory;
 import  org.springframework.beans.factory.annotation.Autowired;
-import  org.springframework.beans.factory.annotation.Value;
 import  org.springframework.stereotype.Component;
 
 @Component
 public class SchedulerRoute extends RouteBuilder {
     private static Logger LOG = LoggerFactory.getLogger(SchedulerRoute.class);
 
-    @Value("${quartz2.app-default-scheduler}")
-    private String rawDefaultIntervalExpression;
+    private String rawDefaultIntervalExpression = "quartz2://appGroup/sampleTimer?cron=0+0/%s+1-23+?+*+MON-SUN";
     
     @Autowired
     private DefaultIntervalEventProcessor defaultIntervalEventProcessor;
